@@ -1,4 +1,4 @@
-//#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 //#include <windows.h>
 //#include <math.h>
@@ -28,6 +28,7 @@
 //	a = 9;
 //	printf("%d ", a);
 //------------------------------------
+//计算一个整数组成它的各个数字之和
 //}
 //int digitsum(int x)
 //{
@@ -46,20 +47,46 @@
 //	printf("%d", digitsum(a));
 //}
 //--------------------------------------------
-
-int power(int n, int m)
-{
-	if (m>=1)
-	{
-		return n * power(n,m-1);
-	}
-	return 1;
-}
-
-
+//用递归实现a的n次方
+//double power(int n, int m)
+//{
+//	if (m>0)
+//	{
+//		return n * power(n,m-1);
+//	}
+//	
+//	if (m < 0)
+//	{
+//		return 1.0/power(n,-m);
+//	}
+//	return 1.0;
+//}
+//
+//
+//int main()
+//{
+//	int a = -2;
+//	int b =  3;
+//	printf("%lf ", power(a,b));
+//}
+//-----------------------------------
+// 对数组指针的简单操作
+//int main()
+//{
+//	
+//	char arr[] = "abcdef";
+//	int a = sizeof(arr) / sizeof(arr[0]);
+//	return 0;
+//}
+//-----------------------------------------------------
+//&数组名+n
 int main()
 {
-	int a = 2;
-	int b = 4;
-	printf("%d ", power(a, b));
+	int arr[] = { 1,2,3,4,5,6 };
+	printf("%p\n", arr);
+	printf("%p\n", arr+1);
+	printf("%p\n", &arr);
+	printf("%p\n", &arr+1);
+
+
 }
