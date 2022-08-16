@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+//#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 //#include <windows.h>
 //#include <math.h>
@@ -6,7 +6,9 @@
 //#include <time.h>
 //#include <stdlib.h>
 
+
 int main()
 {
-
+	int arr[5] = { 5 };
+	return 0;
 }
