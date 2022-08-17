@@ -10,8 +10,8 @@
 void menu()
 {
 	printf("*****************************\n");
-	printf("************1.play***********\n");
-	printf("************0.exit***********\n");
+	printf("**********  1.play  *********\n");
+	printf("**********  0.exit  *********\n");
 	printf("*****************************\n");
 }
 
@@ -27,18 +27,27 @@ void game()
 	{
 		//玩家下棋
 		PlayMove(board, ROW, COL);
-		Determine(board, ROW, COL);
+		if(Determine(board, ROW, COL)!='C')
+		{
+			break;
+		}
 		BotMove(board, ROW, COL);
-		Determine(board, ROW, COL);
+		if (Determine(board, ROW, COL) != 'C')
+		{
+			break;
+		}
 	}
 }
 
 int main()
 {
+	int Who = 0;
 	int x1 = 0;
 	srand((unsigned)time(NULL));
+	
 	do
 	{
+		//打印菜单
 		menu();
 		printf("请选择：》\n");
 		scanf("%d", &x1);

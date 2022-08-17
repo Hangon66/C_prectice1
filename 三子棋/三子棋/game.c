@@ -97,7 +97,124 @@ void BotMove(char board[ROW][COL], int row, int col)
 }
 
 //胜负判断
-int Determine(char board[ROW][COL], int row, int col)
+char Determine(char board[ROW][COL], int row, int col)
 {
+	//判断电脑/玩家输赢
+	//行
+	for (int r=0;r<row;r++)
+	{
+		int count = 0;
+		for (int c = 1; c < col; c++)
+		{
+			if (board[r][c] == board[r][c - 1] &&board[r][0]!=' ')
+			{
+				count++;
+			}
+		}
+		if (count == col - 1)
+		{
+			if (board[r][0] == '#')
+			{
+				printf(">>>>>>>>玩家赢了<<<<<<<<\n");
+				return '#';
+			}
+			else
+			{
+				printf(">>>>>>>>电脑赢了<<<<<<<<\n");
+				return '*';
+			}
+			
+		}
+	 }
+	//列
+	for (int c = 0; c < col; c++)
+	{
+		int count = 0;
+		for (int r = 1; r < row; r++)
+		{
+			if (board[r][c] == board[r - 1][c]&& board[0][c]!=' ')
+			{
+				count++;
+			}
+		}
+		if (count == row - 1)
+		{
+			if (board[0][c] == '#')
+			{
+				printf(">>>>>>>>玩家赢了<<<<<<<<\n");
+				return '#';
+			}
+			else
+			{
+				printf(">>>>>>>>电脑赢了<<<<<<<<\n");
+				return '*';
+			}
+		}
+	}
+	//左对角线
+	for (int i = 1; i < row; i++)
+	{
+		
+		int count = 0;
+		if (board[i][i] == board[i - 1][i - 1]&& board[0][0]!=' ')
+		{
+			count++;
+		}
+		if (count == row - 1)
+		{
+			if (board[0][0]=='#')
+			{
+				printf(">>>>>>>>玩家赢了<<<<<<<<\n");
+				return '#';
+			}
+			else
+			{
+				printf(">>>>>>>>电脑赢了<<<<<<<<\n");
+				return '*';
+			}
+		}
+	}
+	//右对角线
+	while (1)
+	{
+		int count = 0;
+		for (int i = 1; i < row; i++)
+		{
+			if (board[i][row -1- i] == board[i - 1][row - i] && board[0][row-1]!=' ')
+			{
+				count++;
+			}
+		}
+		if (count == row-1)
+		{
+			if (board[0][row-1] == '#')
+			{
+				printf(">>>>>>>>玩家赢了<<<<<<<<\n");
+				return '#';
+			}
+			else
+			{
+				printf(">>>>>>>>电脑赢了<<<<<<<<\n");
+				return '*';
+			}
+		}
+		break;
+	}
+
+
+	//判断继续
+	for (int r = 0; r < row; r++)
+	{
+		for (int c = 0; c < col; c++)
+		{
+			if (board[r][c] == ' ')
+			{
+				return 'C';
+			}
+		}
+	}
+	//平局
+	printf(">>>>>>>>平局<<<<<<<<\n");
+	return 'Q';
 
 }

@@ -18,4 +18,6 @@ void PlayMove(char board[ROW][COL], int row, int col);
 //电脑下棋
 void BotMove(char board[ROW][COL],int row,int col);
 //判断胜负
-int Determine(char board[ROW][COL],int row,int col);
+char Determine(char board[ROW][COL],int row,int col);
+
+//可改进项：清除scanf函数缓存，避免影响后续输入；优化胜负判断（目前只能判断行/列/对角线的全等）；
