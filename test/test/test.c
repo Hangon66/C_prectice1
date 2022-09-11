@@ -6,15 +6,15 @@
 //#include <time.h>
 //#include <stdlib.h>
 
-
-int main()
+void hs(int arry[])
 {
-	int test1[5] = { 1 };
+
+
+	arry[3] = 2;
 	for (int i = 0; i < 5; i++)
 	{
 
-			test1[i]= 1;
+			printf("%d ", arry[i]);
 
 	}
-	hs(test1);
 }
